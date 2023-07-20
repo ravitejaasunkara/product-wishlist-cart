@@ -1,0 +1,7 @@
+<div class="header" style="background-color: black;height: 50px;width: 100%;
+    display: flex;flex-direction: row;justify-content: space-evenly;align-items: center;">
+    <a style="color: white;font-weight: 600;" [routerLink]="['/products']">Product page</a>
+    <a style="color: white;font-weight: 600;" [routerLink]="['/cart']">Cart ({{totalCartItems}})</a>
+    <a style="color: white;font-weight: 600;" [routerLink]="['/wishlist']">Wishlist ({{totalWishlistItems}})</a>
+</div>
+<router-outlet></router-outlet>

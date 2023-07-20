@@ -1,0 +1,21 @@
+<div class="main" *ngIf="wishlistItems.length > 0">
+    <button class="btn btn-danger btn-sm px-5 mt-5 mb-5" (click)="emptyWishlist()">Empty cart</button>
+    <div class="row">
+        <div class="product col-lg-4" *ngFor="let item of uniqueWishlistItems">
+            <h3 style="color: blue;font-weight: 500;">{{item.title}}</h3>
+            <hr>
+            <p>{{item.description.slice(0,30)}}</p>
+            <hr>
+            <h4 style="color: red;">Price: {{item.price}}</h4>
+            <hr>
+            <div class="row">
+                <button class="btn btn-dark btn-sm px-2 col-6"
+                (click)="removeFromWishlist(item)">Remove from wishlist</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="wishlistItems.length == 0">
+    <h1>Your wishlist is empty!!</h1>
+</div>
+

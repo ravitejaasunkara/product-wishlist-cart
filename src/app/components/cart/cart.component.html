@@ -1,0 +1,27 @@
+<div class="main" *ngIf="cartData.length > 0">
+    <button class="btn btn-danger btn-sm px-5 mt-5 mb-5" (click)="emptyCart()">Empty cart</button>
+    <div class="row">
+        <div class="product col-lg-4" *ngFor="let item of uniqueArr">
+            <p style="background-color: black;height: 30px;color: white;font-weight: 500;">Quantity : {{item.count}}</p>
+            <h3 style="color: blue;font-weight: 500;">{{item.title}}</h3>
+            <hr>
+            <p>{{item.description.slice(0,30)}}</p>
+            <hr>
+            <h4 style="color: red;">Price: {{item.price}}</h4>
+            <hr>
+            <div class="row">
+                <button class="btn btn-dark btn-sm px-2 col-6"
+                (click)="removeFromCart(item)">Remove from cart</button>
+                <button class="btn btn-danger btn-sm px-2 col-6"
+                (click)="moveItemToWishlistAndRemoveTheSameItemFromCart(item)">Move to wishlist</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-success">{{totalCartValue}}</h3>
+    </div>
+</div>
+<div *ngIf="cartData.length == 0">
+    <h1>Your cart is empty!!</h1>
+</div>
+
